@@ -45,6 +45,9 @@ namespace WebApi
             //Dependency Injection
             services.AddScoped<IPersonBus, PersonBus>();
             services.AddScoped<IPersonRepository, PersonRepository>();
+
+            services.AddScoped<IBookBus, BookBus>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

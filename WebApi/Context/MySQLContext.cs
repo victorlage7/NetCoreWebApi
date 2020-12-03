@@ -10,7 +10,7 @@ namespace WebApi.Context
         public MySQLContext(DbContextOptions<MySQLContext> options)   : base (options)
         { }
 
-        public DbSet<Livro> Livros { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         public DbSet<Person> Persons { get; set; }
 
