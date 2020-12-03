@@ -1,7 +1,7 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:49978",
       "sslPort": 44365
@@ -22,7 +22,7 @@
       "launchUrl": "api/Persons/getAll",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "MySqlConnectionString": "server=127.0.0.1;user=root;password=root;database=teste"
+        "MySqlConnectionString": "server=127.0.0.1;user=root;password=root;database=netcorewebapi"
       }
     }
   }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using WebApi.BUS.Interface;
 using WebApi.Model;
 
@@ -20,6 +21,7 @@ namespace WebApi.Controller
         [Route("getAll")]
         public IActionResult Get()
         {
+            Log.Information("Usando mais um Serilog");
             List<Person> list = new List<Person>();
 
             list = _personBus.FindAll();
