@@ -7,9 +7,9 @@ namespace WebApi.BUS
 {
     public class PersonBus : IPersonBus
     {
-        private readonly IBaseRepository<Person> _repository;
+        private readonly IPersonRepository _repository;
 
-        public PersonBus(IBaseRepository<Person> repository)
+        public PersonBus(IPersonRepository repository)
         {
             _repository = repository;
         }
@@ -37,6 +37,11 @@ namespace WebApi.BUS
         public void Delete(long id)
         {
             _repository.Delete(id);
+        }
+
+        public List<Person> FindByName(string name)
+        {
+            return _repository.FindByName(name);
         }
     }
 }

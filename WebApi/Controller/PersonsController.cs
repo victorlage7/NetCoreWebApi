@@ -37,6 +37,15 @@ namespace WebApi.Controller
             return Ok(person);
         }
 
+        [HttpGet]
+        [Route("findbyname/{name}")]
+        public IActionResult FindByName(string name)
+        {
+            List<Person> list = new List<Person>();
+            list = _personBus.FindByName(name);
+            return Ok(list);
+        }
+
         [HttpPost]
         [Route("save")]
         public IActionResult Save([FromBody] Person person)

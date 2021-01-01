@@ -14,5 +14,7 @@ namespace WebApi.BUS.Interface
         Person Update(Person person);
 
         void Delete(long id);
+
+        public List<Person> FindByName(string name);
     }
 }

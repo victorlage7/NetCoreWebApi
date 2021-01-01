@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using WebApi.BUS;
 using WebApi.BUS.Interface;
 using WebApi.Context;
+using WebApi.Model;
+using WebApi.Repository;
 using WebApi.Repository.BaseRepository;
 using WebApi.Repository.Interface;
 
@@ -45,6 +47,7 @@ namespace WebApi
             services.AddScoped<IPersonBus, PersonBus>();
             services.AddScoped<IBookBus, BookBus>();
 
+            services.AddScoped<IPersonRepository, PersonRepository>();
 
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         }
