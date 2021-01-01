@@ -21,7 +21,6 @@ namespace WebApi.Controller
         [Route("getAll")]
         public IActionResult Get()
         {
-            Log.Information("Usando mais um Serilog");
             List<Person> list = new List<Person>();
 
             list = _personBus.FindAll();
@@ -53,10 +52,10 @@ namespace WebApi.Controller
             return new ObjectResult(_personBus.Update(person));
         }
 
-        [HttpDelete]
-        public IActionResult Delete(Person person)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
         {
-            _personBus.Delete(person.Id.Value);
+            _personBus.Delete(id);
             return NoContent();
         }
 

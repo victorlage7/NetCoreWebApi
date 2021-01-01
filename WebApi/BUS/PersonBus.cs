@@ -7,9 +7,9 @@ namespace WebApi.BUS
 {
     public class PersonBus : IPersonBus
     {
-        private readonly IPersonRepository _repository;
+        private readonly IBaseRepository<Person> _repository;
 
-        public PersonBus(IPersonRepository repository) 
+        public PersonBus(IBaseRepository<Person> repository)
         {
             _repository = repository;
         }

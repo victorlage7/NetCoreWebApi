@@ -49,7 +49,7 @@ namespace WebApi.Controller
             return new ObjectResult(_bookBus.Update(book));
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
             _bookBus.Delete(id);

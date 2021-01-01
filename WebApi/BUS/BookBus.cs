@@ -7,9 +7,9 @@ namespace WebApi.BUS
 {
     public class BookBus : IBookBus
     {
-        private readonly IBookRepository _repository;
+        private readonly IBaseRepository<Book> _repository;
 
-        public BookBus(IBookRepository repository)
+        public BookBus(IBaseRepository<Book> repository)
         {
             _repository = repository;
         }

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +10,7 @@ using System.Collections.Generic;
 using WebApi.BUS;
 using WebApi.BUS.Interface;
 using WebApi.Context;
-using WebApi.Repository;
+using WebApi.Repository.BaseRepository;
 using WebApi.Repository.Interface;
 
 namespace WebApi
@@ -44,10 +43,10 @@ namespace WebApi
 
             //Dependency Injection
             services.AddScoped<IPersonBus, PersonBus>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
-
             services.AddScoped<IBookBus, BookBus>();
-            services.AddScoped<IBookRepository, BookRepository>();
+
+
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
