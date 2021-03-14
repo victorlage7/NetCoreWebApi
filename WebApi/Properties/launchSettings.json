@@ -22,7 +22,7 @@
       "launchUrl": "api/Persons/getAll",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "MySqlConnectionString": "server=127.0.0.1;user=root;password=root;database=netcorewebapi"
+        "MySqlConnectionString": "server=172.17.0.2;user=root;password=root;database=netcorewebapi"
       }
     }
   }
